@@ -28,6 +28,8 @@ public class ListController {
         columnChoices.put("positionType", "Position Type");
         columnChoices.put("coreCompetency", "Skill");
 
+//        Task #2 - Completed by simply adding the following line and removing the excess <td></td> in list.html
+        tableChoices.put("all", "View All");
         tableChoices.put("employer", JobData.getAllEmployers());
         tableChoices.put("location", JobData.getAllLocations());
         tableChoices.put("positionType", JobData.getAllPositionTypes());
@@ -60,4 +62,5 @@ public class ListController {
 
         return "list-jobs";
     }
+
 }

@@ -10,7 +10,35 @@
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-    <!-- TODO #1 - Use a loop to display job results in a table. -->
+    <!-- TODO #5 - Refactor? -->
+<!--Task #1 - this code creates a new table for each job and populates it field-by-field.-->
+
+    <table th:each="job : ${jobs}" class="job-listing">
+        <tr>
+            <td>ID</td>
+            <td th:text="${job.id}">ID missing</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td th:text="${job.name}">Name missing</td>
+        </tr>
+        <tr>
+            <td>Employer</td>
+            <td th:text="${job.employer}">Employer missing</td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td th:text="${job.location}">Location missing</td>
+        </tr>
+        <tr>
+            <td>Position Type</td>
+            <td th:text="${job.positionType}">Position type missing</td>
+        </tr>
+        <tr>
+            <td>Skill</td>
+            <td th:text="${job.coreCompetency}">Core competency missing</td>
+        </tr>
+    </table>
 
 </div>
 
