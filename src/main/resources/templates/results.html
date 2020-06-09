@@ -8,10 +8,12 @@
 
 <div class="container body-content">
 
-<form th:action="@{/search/results}" method = "post">
-    <h2>Search by:</h2>
+    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-    <p>
+    <form th:action="@{/search/results}" method = "post">
+        <h2>Search by:</h2>
+
+        <p>
             <span th:each="column : ${columns}">
                 <input
                         type="radio"
@@ -22,44 +24,22 @@
                 <label th:for="${column.key}" th:text="${column.value}"></label>
             </span>
 
-    </p>
+        </p>
 
-    <p>
-        <label for="searchTerm">Keyword:</label>
-        <input type="text" name="searchTerm" id="searchTerm" />
-    </p>
+        <p>
+            <label for="searchTerm">Keyword:</label>
+            <input type="text" name="searchTerm" id="searchTerm" />
+        </p>
 
-    <input type="submit" value="Search" />
-</form>
+        <input type="submit" value="Search" />
+    </form>
 
-<hr />
+    <hr />
 
-<table th:each="job : ${jobs}" class="job-listing">
-    <tr>
-        <td>ID</td>
-        <td th:text="${job.id}">ID missing</td>
-    </tr>
-    <tr>
-        <td>Name</td>
-        <td th:text="${job.name}">Name missing</td>
-    </tr>
-    <tr>
-        <td>Employer</td>
-        <td th:text="${job.employer}">Employer missing</td>
-    </tr>
-    <tr>
-        <td>Location</td>
-        <td th:text="${job.location}">Location missing</td>
-    </tr>
-    <tr>
-        <td>Position Type</td>
-        <td th:text="${job.positionType}">Position type missing</td>
-    </tr>
-    <tr>
-        <td>Skill</td>
-        <td th:text="${job.coreCompetency}">Core competency missing</td>
-    </tr>
-</table>
+    <th:block th:if="${jobs}">
+        <table th:replace="list-jobs :: jobDisplayTable"></table>
+    </th:block>
+
 </div>
 
 </body>
