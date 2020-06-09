@@ -1,3 +1,9 @@
+.categoryHeader {
+    font-weight: bold;
+    font-style: italic;
+    color: #0000FF;
+}
+
 .body-content {
     margin-top: 72px;
 }

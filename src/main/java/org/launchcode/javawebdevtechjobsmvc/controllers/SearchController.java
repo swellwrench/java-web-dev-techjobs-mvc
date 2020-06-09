@@ -27,7 +27,6 @@ public class SearchController {
     public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm) {
         ArrayList<Job> jobs = new ArrayList<>();
         String formattedSearchType;
-
         if (searchType.equals("coreCompetency")) {
             formattedSearchType = "Skill";
         } else if (searchType.equals("positionType")) {
@@ -41,9 +40,11 @@ public class SearchController {
         } else {
             jobs = JobData.findByColumnAndValue(searchType, searchTerm);
         }
+
         model.addAttribute("columns", columnChoices);
         model.addAttribute("jobs", jobs);
         model.addAttribute("title", "Search results for " + formattedSearchType + ": " + searchTerm);
+        model.addAttribute("radioSelection", searchType);
         return "results";
     }
 

@@ -3,7 +3,7 @@
 <head th:replace="fragments :: head">
 </head>
 <body>
-<!--This is results.html-->
+
 <div th:replace="fragments :: page-header"></div>
 
 <div class="container body-content">
@@ -20,7 +20,7 @@
                         name="searchType"
                         th:id="${column.key}"
                         th:value="${column.key}"
-                        th:checked="${column.key == 'all'}"/>
+                        th:checked="${column.key == radioSelection}"/>
                 <label th:for="${column.key}" th:text="${column.value}"></label>
             </span>
 

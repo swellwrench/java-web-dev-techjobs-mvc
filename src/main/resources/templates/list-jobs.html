@@ -15,27 +15,27 @@
 
     <table th:each="job : ${jobs}" class="job-listing" th:fragment="jobDisplayTable">
         <tr>
-            <td>ID</td>
+            <td class="categoryHeader">ID</td>
             <td th:text="${job.id}">ID missing</td>
         </tr>
         <tr>
-            <td>Name</td>
+            <td class="categoryHeader">Name</td>
             <td th:text="${job.name}">Name missing</td>
         </tr>
         <tr>
-            <td>Employer</td>
+            <td class="categoryHeader">Employer</td>
             <td th:text="${job.employer}">Employer missing</td>
         </tr>
         <tr>
-            <td>Location</td>
+            <td class="categoryHeader">Location</td>
             <td th:text="${job.location}">Location missing</td>
         </tr>
         <tr>
-            <td>Position Type</td>
+            <td class="categoryHeader">Position Type</td>
             <td th:text="${job.positionType}">Position type missing</td>
         </tr>
         <tr>
-            <td>Skill</td>
+            <td class="categoryHeader">Skill</td>
             <td th:text="${job.coreCompetency}">Core competency missing</td>
         </tr>
     </table>
