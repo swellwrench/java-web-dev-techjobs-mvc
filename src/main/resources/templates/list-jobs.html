@@ -20,23 +20,23 @@
         </tr>
         <tr>
             <td class="categoryHeader">Name</td>
-            <td th:text="${job.name}">Name missing</td>
+            <td th:text="${job.name}">Name missing</a></td>
         </tr>
         <tr>
             <td class="categoryHeader">Employer</td>
-            <td th:text="${job.employer}">Employer missing</td>
+            <td><a th:href="@{/list/jobs(column=employer,value=${job.employer})}" th:text="${job.employer}">Employer missing</a></td>
         </tr>
         <tr>
             <td class="categoryHeader">Location</td>
-            <td th:text="${job.location}">Location missing</td>
+            <td><a th:href="@{/list/jobs(column=location,value=${job.location})}" th:text="${job.location}">Location missing</a></td>
         </tr>
         <tr>
             <td class="categoryHeader">Position Type</td>
-            <td th:text="${job.positionType}">Position type missing</td>
+            <td><a th:href="@{/list/jobs(column=positionType,value=${job.positionType})}" th:text="${job.positionType}">Position type missing</a></td>
         </tr>
         <tr>
             <td class="categoryHeader">Skill</td>
-            <td th:text="${job.coreCompetency}">Core competency missing</td>
+            <td><a th:href="@{/list/jobs(column=coreCompetency,value=${job.coreCompetency})}" th:text="${job.coreCompetency}">Core competency missing</a></td>
         </tr>
     </table>
 
